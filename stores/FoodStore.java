@@ -116,7 +116,7 @@ public class FoodStore {
 					if (customerType.equalsIgnoreCase("CASUAL") || customerType.equalsIgnoreCase("CATERING")){
 						Boolean replaced = false;
 						for (int j = 0; j < menu.length; j++){
-							if (getRollCount(items[j]) != 0){
+							if (getRollCount(menu[j]) != 0){
 								items[i] = menu[j];
 								replaced = true;
 							}
@@ -130,9 +130,13 @@ public class FoodStore {
 						// NO ORDER PLACED
 						for (int j = 0; j < menu.length; j++){
 							items[j] = "NONE";
-							break;
 						}
+						break;
 					}
+				}
+
+				if (!(items[i].equalsIgnoreCase("NONE"))){
+					decrementInventory(items[i]);	
 				}
 			}
 
@@ -164,19 +168,26 @@ public class FoodStore {
 				}
 			}
 
-			Food orderedItem = orderFactory(items[i], extras, 1);
-			recordSale(orderedItem, customerType);
+			if (!(items[i].equalsIgnoreCase("NONE"))){
+				Food orderedItem = orderFactory(items[i], extras, 1);
+				recordSale(orderedItem, customerType);
+			}
+			
 		}
 
 		//decrement inventory
-		for (int i = 0; i < items.length; i++){
-			for (int j = 0; j < inventory.length; j++){
-				if (inventory[j].getDescription().equalsIgnoreCase(items[i])){
-					inventory[j].decrementQuantity();
-				}
-			}			
-		}
+		// for (int i = 0; i < items.length; i++){
+		// 	decrementInventory(items[i]);		
+		// }
 
+	}
+
+	public void decrementInventory(String rollType){
+		for (int j = 0; j < inventory.length; j++){
+			if (inventory[j].getDescription().equalsIgnoreCase(rollType)){
+				inventory[j].decrementQuantity();
+			}
+		}
 	}
 
 	public void recordSale(Food item, String customerType){

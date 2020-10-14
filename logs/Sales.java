@@ -49,7 +49,7 @@ public class Sales {
 	public double getRevenueByFoodType(String foodType){ 
 		double total = 0;
 		for (int i = 0; i < sales.size(); i++){
-			String rollOrdered = sales.get(i).getDescription().substring(0, sales[i].getDescription().indexOf(' '));
+			String rollOrdered = sales.get(i).getDescription().substring(0, sales.get(i).getDescription().indexOf(' '));
 			String rollType = foodType.substring(0, foodType.indexOf(' '));
 
 			if (rollOrdered.equalsIgnoreCase(rollType)){
@@ -61,12 +61,8 @@ public class Sales {
 	public int totalSoldByType(String foodType){ 
 		int total = 0;
 		for (int i = 0; i < sales.size(); i++){
-			String rollOrdered = sales.get(i).getDescription().substring(0, sales[i].getDescription().indexOf(' '));
+			String rollOrdered = sales.get(i).getDescription().substring(0, sales.get(i).getDescription().indexOf(' '));
 			String rollType = foodType.substring(0, foodType.indexOf(' '));
-
-			System.out.println("got here");
-			System.out.println(rollOrdered);
-			System.out.println(rollType);
 
 			if (rollOrdered.equalsIgnoreCase(rollType)){
 				total = total + 1;

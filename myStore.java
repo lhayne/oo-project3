@@ -5,6 +5,16 @@ import customers.caterers.CateringCustomer;
 import customers.Customer;
 import behaviors.PurchaseBehavior;
 import factories.CustomerFactory;
+import foods.rolls.SpringRoll;
+import foods.rolls.EggRoll;
+import foods.rolls.JellyRoll;
+import foods.rolls.SausageRoll;
+import foods.rolls.PastryRoll;
+import foods.decorators.condiments.Sauce;
+import foods.decorators.condiments.Topping;
+import foods.decorators.condiments.Filling;
+import logs.Sales;
+import logs.Outages;
 import java.util.*;
 
 public class myStore {
