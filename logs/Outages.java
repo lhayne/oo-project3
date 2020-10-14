@@ -1,12 +1,7 @@
 package logs;
 import java.util.*;
 
-/*
-OBSERVER PATTERN : 	Here the ZooClock is observable by everyone
-					at the zoo and updates them with the time
-					so that they can perform their chores.
-*/
-
+// Outages class tracks the outages for each roll
 public class Outages {
 	public Vector<String> customers = new Vector<String>(5);
 	public Vector<String> rolls = new Vector<String>(5);

@@ -3,13 +3,15 @@ package customers;
 import java.util.*;
 import behaviors.PurchaseBehavior;
 
+//STRATEGY PATTERN : Here we've delegated the purchasing behavior to another
+// class through the strategy pattern.
 public class Customer {
 	/*
 	Customer class
-	Attributes : name (String)
-				 type (String)
-	methods : arrive : prints arrive message
-			  leave : prints leaving message
+	Attributes : type (String)
+				 performPurchase (PurchaseBehavior)
+	methods : purchase : purchase items
+			  getType : returns customer type
 	*/
 	String type;
 	behaviors.PurchaseBehavior performPurchase;

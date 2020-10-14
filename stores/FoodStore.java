@@ -7,20 +7,23 @@ import foods.Food;
 import logs.Sales;
 import logs.Outages;
 
-// ABSTRACTION : This class represents animals generally, but can be overridden by 
-// more concrete subclasses.
 public class FoodStore {
 	/*
-	Animal class
+	FoodStore class
 	Attributes : name (String)
 				 type (String)
-	methods : wake : animal prints wake message
-			  makeNoise : animal prints noise message
-			  eat : animal prints eating message
-			  roam : animal prints roaming message
-			  sleep : animal prints sleeping message
-			  getName : returns the name of the animal
-			  getFullTitle : returns full animal title
+	methods : orderFactory : makes food orders
+			  getMenu : returns list of menu items
+			  getRollCount : returns the number of rolls left with specific name
+			  placeOrder : places customer order from list of wants
+			  recordOrder : records the sale of an order
+			  decrementInventory : subtracts order from inventory
+			  recordSale : adds to salebook
+			  getRevenueByCustomerType : returns revenue by customer type
+			  restock : restocks empty rolls
+			  inventoryLeft : checks to see what inventory is left
+			  printDailyResults : prints daily results
+			  printFinalResults : prints final results
 	*/
 
 	// ENCAPSULATION : This is an example of encapsulation because declaring these
@@ -174,12 +177,6 @@ public class FoodStore {
 			}
 			
 		}
-
-		//decrement inventory
-		// for (int i = 0; i < items.length; i++){
-		// 	decrementInventory(items[i]);		
-		// }
-
 	}
 
 	public void decrementInventory(String rollType){

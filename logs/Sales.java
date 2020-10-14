@@ -2,12 +2,7 @@ package logs;
 import java.util.*;
 import foods.Food;
 
-/*
-OBSERVER PATTERN : 	Here the ZooClock is observable by everyone
-					at the zoo and updates them with the time
-					so that they can perform their chores.
-*/
-
+// Sales class tracks the sales of rolls at store.
 public class Sales {
 	public Vector<String> customers = new Vector<String>(5);
 	public Vector<Food> sales = new Vector<Food>(5);

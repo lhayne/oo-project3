@@ -7,6 +7,8 @@ import customers.Customer;
 import behaviors.PurchaseBehavior;
 import java.util.*;
 
+
+//FACTORY PATTERN : Creates customers using a factory design.
 public class CustomerFactory {
 	public CustomerFactory(){
 
