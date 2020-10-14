@@ -11,19 +11,20 @@ public class Customer {
 	methods : arrive : prints arrive message
 			  leave : prints leaving message
 	*/
-
-	String name;
 	String type;
 	behaviors.PurchaseBehavior performPurchase;
 
-	public Customer(String givenName, String givenType, String purchaseMode){
-		name = givenName;
+	public Customer(String givenType){
 		type = givenType;
 
-		performPurchase = new behaviors.PurchaseBehavior(givenType, purchaseMode);
+		performPurchase = new behaviors.PurchaseBehavior(givenType);
 	}
 	
-	public void purchase(){
-		performPurchase();
+	public String [] purchase(String [] menu){
+		return performPurchase.purchase(menu);
+	}
+
+	public String getType(){
+		return type;
 	}
 }

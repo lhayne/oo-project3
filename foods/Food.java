@@ -17,6 +17,15 @@ public abstract class Food {
 	public String getDescription(){
 		return description;
 	}
+	public int getQuantity(){
+		return quantity;
+	}
+	public void decrementQuantity(){
+		quantity = quantity - 1;
+	}
+	public void setQuantity(int value){
+		quantity = value;
+	}
 
 	public abstract double cost();
 }

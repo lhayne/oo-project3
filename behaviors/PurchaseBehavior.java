@@ -11,21 +11,48 @@ public class PurchaseBehavior{
 		Some animals in our zoo don't want to wake up and instead enter a sleepy,
 		half-conscious state.
 	*/
-	private String name;
 	private String type;
-	private Boolean fullAwake;
 
-	public WakeBehavior(String givenName, String givenType, Boolean mode){
-		name = givenName;
+	public PurchaseBehavior(String givenType){
 		type = givenType;
-		fullAwake = mode;
 	}
-	public void wake(){
-		if (fullAwake){
-			System.out.println(name + " the " + type + " wakes up.");
+	public String [] purchase(String [] menu){
+
+		Random r = new Random();
+
+		if (type.equalsIgnoreCase("CASUAL")){
+			int numberRolls = r.nextInt(3) + 1;
+			String [] rolls = new String[numberRolls]; 
+			for (int i = 0; i < numberRolls; i++){
+				int rollIndex = r.nextInt(menu.length);
+				rolls[i] = menu[rollIndex];
+			}
+
+			return rolls;
 		}
-		else {
-			System.out.println(name + " the " + type + " sleepily wakes up and enters a sleepy state.");
+
+		else if (type.equalsIgnoreCase("BUSINESS")){
+			String [] rolls = new String[10]; 
+			for (int i = 0; i < 10; i++){
+				rolls[i] = menu[i % 5];
+			}
+
+			return rolls;
 		}
+
+		else if (type.equalsIgnoreCase("CATERING")){
+			String [] rolls = new String[15];
+			for (int j = 0; j < 3; j++){
+				int rollIndex = r.nextInt(menu.length);
+				for (int i = 0; i < 5; i++){
+					rolls[5*j+i] = menu[rollIndex];
+				}
+			}
+
+			return rolls;
+		}
+
+		String [] empty = {};
+		return empty;
 	}
 }
